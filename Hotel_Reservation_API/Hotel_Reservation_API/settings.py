@@ -76,6 +76,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+ROOT_URLCONF = 'Hotel_Reservation_API.urls'
 # ========================
 # CORS CONFIG (Correct!)
 # ========================
