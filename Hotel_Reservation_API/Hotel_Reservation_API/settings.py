@@ -30,8 +30,16 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "[::1]",
+    "hotels.rootmatrix.cloud",
+]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://hotels.rootmatrix.cloud",
+]
 
 # Application definition
 
@@ -68,6 +76,7 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://hotels.rootmatrix.cloud",
 ]
 
 REST_FRAMEWORK ={
