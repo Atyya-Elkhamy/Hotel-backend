@@ -1,18 +1,23 @@
+version: "3.9"
+
 services:
   web:
     build: .
     container_name: hotel_backend
+    working_dir: /app
+    command: gunicorn Hotel_Reservation_API.wsgi:application --bind 0.0.0.0:8001
     volumes:
       - .:/app
       - ./static:/app/static
-    expose:
-      - "8001"
+    ports:
+      - "8001:8001"
     env_file:
       - .env
+    networks:
+      - inventory_management_system_default # <- use the network of Postgres
     depends_on:
-      - db
+      - postgres # optional, for order
 
-  db:
-    image: postgres:13
-    container_name: postgres
+networks:
+  inventory_management_system_default:
     external: true
