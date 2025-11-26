@@ -14,10 +14,8 @@ services:
     env_file:
       - .env
     networks:
-      - inventory_management_system_default # <- use the network of Postgres
-    # depends_on:
-    #   - postgres  # <- remove this line
+      - shared_network
 
 networks:
-  inventory_management_system_default:
+  shared_network:
     external: true
