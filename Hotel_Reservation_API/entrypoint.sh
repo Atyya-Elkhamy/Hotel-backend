@@ -14,4 +14,4 @@ echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
 echo "Starting Gunicorn..."
-exec gunicorn Hotel_Reservation_API.wsgi:application --bind 0.0.0.0:8000
+exec gunicorn Hotel_Reservation_API.wsgi:application --bind 0.0.0.0:8001
